@@ -1,0 +1,12 @@
+let myDate = new Date();
+console.log(myDate);
+console.log(myDate.getDate());
+console.log(myDate.getDay());
+console.log(myDate.getFullYear());
+console.log(myDate.getMonth());
+console.log(myDate.toString());
+console.log(myDate.toDateString());
+console.log(myDate.toLocaleDateString());
+console.log(myDate.toLocaleString());
+console.log(myDate.toISOString());
+console.log(new Date("2000/05/29").toDateString());
