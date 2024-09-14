@@ -30,6 +30,9 @@
 // console.log(propertyNames);
 // console.log(valuesOfObject);
 
+// let arr = ["Apple", "Grape", "Orange"];
+// const [a, b, ...c] = arr; // destructuring in array
+
 let arr1 = [2, 3, "Apple", null, Infinity];
 let arr2 = Array.of(2, 3, "Apple", null, Infinity);
 console.log(arr1);
