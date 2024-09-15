@@ -75,7 +75,7 @@
 
 // ==============Important
 // truthy values in JS are
-// "0"," ",[],{},true,"false", function(){}
+// "0", " ", [], {}, true, "false", function(){}
 
 // if (function () {}) {
 //   console.log("Inside if ^^^^^^");
