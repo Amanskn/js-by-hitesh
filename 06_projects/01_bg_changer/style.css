@@ -1,0 +1,37 @@
+
+:root {
+    --main-bg-color: rgb(69, 66, 66);;
+    --main-text-color: rgb(132, 147, 110);
+}
+#default,body{
+    background-color:var(--main-bg-color) ;
+    color: var(--main-text-color);
+}
+h1{
+    text-align: center;
+    box-shadow: 0px 0px 12px lightblue inset;
+    border-radius: 20px;
+    width: 30vw;
+    margin: auto;
+    margin-top: 20px;
+}
+.outer{
+    /* border: 6px solid black; */
+    display: flex;
+    justify-content: space-around;
+    width :80vw;
+    margin: auto;
+    margin-top: 10rem;
+    flex-wrap: wrap;
+}
+.inner{
+    /* text-align: center; */
+    cursor: pointer;
+    border: 5px solid darkcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
