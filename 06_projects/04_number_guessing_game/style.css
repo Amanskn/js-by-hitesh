@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(33, 27, 27);
+    color: rgb(87, 125, 112);
+}
+.textCenter{
+    text-align: center;
+}
+h1{
+    box-shadow: 0px 0px 5px 5px crimson;
+    border-radius: 5px;
+    width: 70vw;
+    margin: 20px auto;
+}
+#guessText{
+    font-size: 3rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+input{
+    width: 40vw;
+    font-size: 1.5rem;
+}

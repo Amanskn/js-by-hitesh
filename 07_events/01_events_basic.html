@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://google.com">Go to google</a>
+    <div>
+      <img
+        src="https://cdn.firstcry.com/education/2022/11/26141737/Animal-Name-Starting-With-L-For-Kids.jpg"
+        alt="image-1"
+      />
+    </div>
+    <div>
+      <img
+        src="https://cdn.pixabay.com/photo/2023/11/29/21/05/animal-8420313_640.jpg"
+        alt="image-2"
+      />
+    </div>
+    <div>
+      <img
+        src="https://www.rd.com/wp-content/uploads/2020/05/GettyImages-1064680152-scaled.jpg?fit=700%2C467"
+        alt="image-3"
+      />
+    </div>
+    <div>
+      <img
+        src="https://img.freepik.com/free-photo/view-leopard-animal-wild_23-2150374898.jpg"
+        alt="image-4"
+      />
+    </div>
+    <script>
+      const imageTags = document.querySelectorAll("img");
+      //   console.log(imageTags);
+      //   imageTags.forEach((eachImageTag, index, arr) => {
+      // =====================Adding click event using .onclick method
+      // Important: using .onclick we can only add one callabck
+      // The onclick is just a property. Like all object properties, if we write more than one property, it will be overwritten.
+      // eachImageTag.onclick = (e) => {
+      //   const altAttributeValue = eachImageTag.getAttribute("alt");
+      //   console.log("using .onclick e is ", e);
+      //   console.log("altAttributeValue is ", altAttributeValue);
+      // };
+      // eachImageTag.onclick = (e) => {
+      //   alert("Hello");
+      // };
+      // ============Adding click event using addEventListener method :: RECOMMENDED
+      // Important: using addEventListener we can add many callback on the same event
+      //     eachImageTag.addEventListener("click", (e) => {
+      //       const altAttributeValue = eachImageTag.getAttribute("alt");
+      //       console.log("via addEventListener e is ", e);
+      //       console.log("altAttributeValue is ", altAttributeValue);
+      //     });
+      //     eachImageTag.addEventListener("click", (e) => {
+      //       alert("Hello");
+      //     });
+      //   });
+
+      // +++++++++++++++++++++++++++++++++
+      //       Event Phases
+      // There are two main phases in event propagation:
+
+      // Capture Phase: The event starts from the top (the document) and moves down to the target element.
+      // Bubble Phase: The event starts from the target element and bubbles up to the document.
+      // When true is passed:
+      // If the third argument is true, the event listener will be triggered during the capture phase.
+      // If the third argument is false, the event listener will be triggered during the bubble phase.
+      const [bodyTag] = document.getElementsByTagName("body");
+      const allDivs = document.querySelectorAll("div");
+
+      //   //==========Adding click event listener to body tag
+      bodyTag.addEventListener(
+        "click",
+        (e) => {
+          e.stopPropagation();
+          console.log("Clicked inside body");
+        }
+        // true //==== CAPTURE PHASE ( top to down)
+        // false   //==== BUBBLE PHASE (down to top)( this is the default one also)
+      );
+
+      //==========Adding click event listener to each div tag
+      allDivs.forEach((eachDiv, index) => {
+        eachDiv.addEventListener(
+          "click",
+          (e) => {
+            e.stopPropagation();
+            console.log(`Clicked inside div no. ${index + 1}`);
+          }
+          //   true
+        );
+      });
+
+      //   =========adding click eventlistener to each img tag
+      imageTags.forEach((eachImgTag, index) => {
+        eachImgTag.addEventListener(
+          "click",
+          (e) => {
+            e.stopPropagation();
+            console.log(`Clicked inside Image tag no. ${index + 1}`);
+          }
+          //   true
+        );
+      });
+
+      //   ============preventDefault()
+      const [firstAnchorTag] = document.getElementsByTagName("a");
+      firstAnchorTag.addEventListener(
+        "click",
+        (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log(
+            "anchor tag clickedand the text content is :",
+            firstAnchorTag.innerText
+          );
+        }
+        // true
+      );
+    </script>
+  </body>
+</html>
