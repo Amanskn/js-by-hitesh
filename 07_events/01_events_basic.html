@@ -92,6 +92,8 @@
           "click",
           (e) => {
             e.stopPropagation();
+            // console.log("!@@!", e.target);
+
             console.log(`Clicked inside div no. ${index + 1}`);
           }
           //   true
@@ -103,6 +105,7 @@
         eachImgTag.addEventListener(
           "click",
           (e) => {
+            console.log("!!", e.target);
             e.stopPropagation();
             console.log(`Clicked inside Image tag no. ${index + 1}`);
           }
@@ -117,6 +120,7 @@
         (e) => {
           e.preventDefault();
           e.stopPropagation();
+          console.log("@@@@@@", e.target.tagName);
           console.log(
             "anchor tag clickedand the text content is :",
             firstAnchorTag.innerText
