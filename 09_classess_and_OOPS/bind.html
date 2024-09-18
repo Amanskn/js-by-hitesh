@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        border: 2px solid rgb(255, 0, 0);
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(86, 79, 79)">
+    <button type="submit">Click me</button>
+  </body>
+
+  <script>
+    // class React {
+
+    //   constructor() {
+    //     this.library = "REACT";
+    //     this.server = "https://localhost:8000";
+    //     document
+    //       .querySelector("button")
+    //       //   .addEventListener("click", this.handleClick);
+    //       .addEventListener("click", this.handleClick.bind(this)); // binding handleClick to the newly created object of React class
+    //     document
+    //       .querySelector("body")
+    //       //   .addEventListener("click", this.handleClick.bind(this));
+    //       .addEventListener("click", this.handleClick);
+    //   }
+
+    //   handleClick(e) {
+    //     // e.stopPropagation();
+    //     console.log("e.target is ", e.target);
+    //     console.log("Handle click is called and the value of this is", this);
+    //     console.log(`info is ${this.library} and ${this.server}`);
+    //   }
+    // }
+    // const r1 = new React();
+    // const r2 = new React();
+    // r1.handleClick();
+
+    // +++++++++++++++++++++++++++++++++++++
+    let clickHandler = (e) => {
+      console.log("clicked inside fun2", Date.now());
+    };
+    // below is an example to show that attaching same event handler on same event doesnot registers the eventhandler twice
+    document.querySelector("button").addEventListener("click", clickHandler);
+    document.querySelector("button").addEventListener("submit", clickHandler);
+  </script>
+</html>
