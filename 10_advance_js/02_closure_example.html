@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <button>Orange</button>
+    <button>Green</button>
+    <script>
+      const [orangeButton, greenButton] = document.querySelectorAll("button");
+      function changeBodyBgColor(color) {
+        console.log("running");
+        return function () {
+          document.body.style.backgroundColor = `${color}`;
+        };
+      }
+      orangeButton.addEventListener(
+        "click",
+        changeBodyBgColor(orangeButton.textContent)
+      );
+      greenButton.addEventListener(
+        "click",
+        changeBodyBgColor(greenButton.textContent)
+      );
+      //   orangeButton.onclick = changeBodyBgColor(orangeButton.innerText);
+      //   greenButton.onclick = changeBodyBgColor(greenButton.innerText);
+    </script>
+  </body>
+</html>
